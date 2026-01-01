@@ -1,12 +1,12 @@
-\# Limit-Order-Book
+# Limit-Order-Book
 
-\## 🚀 High-Performance Limit Order Book (C++)
+## 🚀 High-Performance Limit Order Book (C++)
 
 A low-latency, single-threaded limit order book / matching engine written in modern C++, focused on data-structure choice, memory locality, and allocator performance.
 
 Built to explore how real exchange engines optimize for throughput and nanosecond-level latency.
 
-\## ✨ Featuresx
+## ✨ Featuresx
 
 Price-time priority matching (FIFO at each price level)
 
@@ -22,13 +22,13 @@ Deterministic synthetic workload generator
 
 Microbenchmarking with throughput & latency metrics
 
-\## 🧠 Design Overview
+## 🧠 Design Overview
 
 Order Book Structure
 
 Price Levels
 
-Fixed-size arrays (PriceLevel\* bids\[MAX\_PRICE\], asks\[MAX\_PRICE\])
+Fixed-size arrays (PriceLevel* bids[MAX_PRICE], asks[MAX_PRICE])
 
 Avoids std::map pointer chasing
 
@@ -40,7 +40,7 @@ Preserves time priority
 
 Order Index
 
-unordered\_map for O(1) cancels
+unordered_map for O(1) cancels
 
 Best Bid / Ask Tracking
 
