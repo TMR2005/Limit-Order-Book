@@ -17,41 +17,24 @@ Built to explore how real exchange engines optimize for throughput and nanosecon
 
 ## 🧠 Design Overview
 
-Order Book Structure
-
-Price Levels
-
-Fixed-size arrays (PriceLevel* bids[MAX_PRICE], asks[MAX_PRICE])
-
-Avoids std::map pointer chasing
-
-Per-Price FIFO Queue
-
-Doubly linked list of orders
-
-Preserves time priority
-
-Order Index
-
-unordered_map for O(1) cancels
-
-Best Bid / Ask Tracking
-
-Integer pointers updated incrementally
-
-No tree traversal
-
-Memory Management
-
-Custom OrderPool
-
-Chunk-based allocation
-
-Free-list reuse
-
-No new/delete on hot path
-
-Improves cache locality and reduces allocator stalls
+### Order Book Structure
+- Price Levels
+- Fixed-size arrays (PriceLevel* bids[MAX_PRICE], asks[MAX_PRICE])
+- Avoids std::map pointer chasing
+- Per-Price FIFO Queue
+- Doubly linked list of orders
+- Preserves time priority
+- Order Index
+- unordered_map for O(1) cancels
+- Best Bid / Ask Tracking
+- Integer pointers updated incrementally
+- No tree traversal
+- Memory Management
+- Custom OrderPool
+- Chunk-based allocation
+- Free-list reuse
+- No new/delete on hot path
+- Improves cache locality and reduces allocator stalls
 
 📊 Benchmark Results
 
