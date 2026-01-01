@@ -1,11 +1,12 @@
-# Limit-Order-Book
-🚀 High-Performance Limit Order Book (C++)
+\# Limit-Order-Book
+
+\## 🚀 High-Performance Limit Order Book (C++)
 
 A low-latency, single-threaded limit order book / matching engine written in modern C++, focused on data-structure choice, memory locality, and allocator performance.
 
 Built to explore how real exchange engines optimize for throughput and nanosecond-level latency.
 
-✨ Features
+\## ✨ Featuresx
 
 Price-time priority matching (FIFO at each price level)
 
@@ -21,12 +22,13 @@ Deterministic synthetic workload generator
 
 Microbenchmarking with throughput & latency metrics
 
-🧠 Design Overview
+\## 🧠 Design Overview
+
 Order Book Structure
 
 Price Levels
 
-Fixed-size arrays (PriceLevel* bids[MAX_PRICE], asks[MAX_PRICE])
+Fixed-size arrays (PriceLevel\* bids\[MAX\_PRICE\], asks\[MAX\_PRICE\])
 
 Avoids std::map pointer chasing
 
@@ -38,7 +40,7 @@ Preserves time priority
 
 Order Index
 
-unordered_map<OrderID → Order*> for O(1) cancels
+unordered\_map for O(1) cancels
 
 Best Bid / Ask Tracking
 
@@ -62,12 +64,16 @@ Improves cache locality and reduces allocator stalls
 
 Tested on 1,000,000 events (mixed limit + cancel workload)
 
-Implementation	Throughput	Avg Latency
-Map + No Pool	~6.1 M ops/sec	~162 ns
-Map + Pool	~7.6 M ops/sec	~130 ns
-Array + Pool	~9.8 M ops/sec	~101 ns
+ImplementationThroughputAvg Latency
+
+Map + No Pool~6.1 M ops/sec~162 ns
+
+Map + Pool~7.6 M ops/sec~130 ns
+
+Array + Pool~9.8 M ops/sec~101 ns
 
 Replacing std::map with array-indexed price levels improved throughput by ~30%.
+
 Adding a custom object pool eliminated allocator overhead for an additional ~25%.
 
 Total improvement: ~60%
