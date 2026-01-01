@@ -51,3 +51,6 @@ Tested on **1,000,000 events** (mixed limit + cancel workload)
 
 
 ### Total improvement: ~60%
+
+<img width="578" height="402" alt="image" src="https://github.com/user-attachments/assets/7f47155f-a622-4402-8835-9c5a5b20dd6f" />
+
