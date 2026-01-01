@@ -6,21 +6,14 @@ A low-latency, single-threaded limit order book / matching engine written in mod
 
 Built to explore how real exchange engines optimize for throughput and nanosecond-level latency.
 
-## ✨ Featuresx
-
-Price-time priority matching (FIFO at each price level)
-
-Supports limit orders and cancellations
-
-Array-indexed price levels for O(1) best bid / ask access
-
-Custom object pool to eliminate allocator overhead
-
-Cache-friendly linked lists per price level
-
-Deterministic synthetic workload generator
-
-Microbenchmarking with throughput & latency metrics
+## ✨ Features
+- Price-time priority matching (FIFO at each price level)
+- Supports limit orders and cancellations
+- Array-indexed price levels for O(1) best bid / ask access
+- Custom object pool to eliminate allocator overhead
+- Cache-friendly linked lists per price level
+- Deterministic synthetic workload generator
+- Microbenchmarking with throughput & latency metrics
 
 ## 🧠 Design Overview
 
