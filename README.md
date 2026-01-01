@@ -38,7 +38,7 @@ Built to explore how real exchange engines optimize for throughput and nanosecon
 
 ## 📊 Benchmark Results
 - Tested on 1,000,000 events (mixed limit + cancel workload)
- Implementation  Throughput     Avg Latency
+ ### Implementation  Throughput     Avg Latency
 - Map + No Pool   6.1 M ops/sec  162 ns
 - Map + Pool      7.6 M ops/sec  130 ns
 - Array + Pool    9.8 M ops/sec  101 ns
